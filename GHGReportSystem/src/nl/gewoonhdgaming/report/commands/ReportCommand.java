@@ -20,7 +20,7 @@ public class ReportCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("report")) {
-			if(args.length > 3) {
+			if(args.length >= 2) {
 			    StringBuilder builder = new StringBuilder();
 			    for(int x = 1; x < args.length; x++)
 			        builder.append(args[x]).append(" ");
@@ -48,13 +48,10 @@ public class ReportCommand implements CommandExecutor {
 				sender.sendMessage(reportSystem.PREFIX + ChatColor.RED + "Je moet een speler zijn om dit uit te voeren.");
 				return false;
 			}
-			if(args.length <2) {
-				sender.sendMessage(reportSystem.PREFIX + ChatColor.RED + "Verkeerd gebruik! Doe: /report <name> of /report <naam> <reden>");
+			if(args.length <3) {
+				sender.sendMessage(reportSystem.PREFIX + ChatColor.RED + "Verkeerd gebruik! Doe: /report <naam> <reden>");
 				return false;
 			}
-			
-			Player p = (Player) sender;
-			reportSystem.getReportGUI().openInv(p, args[0]);
 		}
 		return false;
 	}
