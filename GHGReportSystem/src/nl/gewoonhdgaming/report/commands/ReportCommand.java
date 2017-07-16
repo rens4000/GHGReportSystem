@@ -27,19 +27,19 @@ public class ReportCommand implements CommandExecutor {
 			    
 			    if(!(sender instanceof Player)) {
 			    	reportSystem.getReportManager().createReport(builder.toString(), "console", args[0]);
-					sender.sendMessage(reportSystem.PREFIX + args[1] + " is gereport!");
-					sender.sendMessage(reportSystem.PREFIX + args[1] + " is gereport!" + ChatColor.RED + " Hou wel in gedachte"
+					sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!");
+					sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!" + ChatColor.RED + " Hou wel in gedachte"
 							+ " dat het verboden is om iemand vals te reporten!");
 			    	return false;
 			    }
 			    
-				reportSystem.getReportManager().createReport(builder.toString(), sender.getName(), args[1]);
-				sender.sendMessage(reportSystem.PREFIX + args[1] + " is gereport!" + ChatColor.RED + " Hou wel in gedachte"
+				reportSystem.getReportManager().createReport(builder.toString(), sender.getName(), args[0]);
+				sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!" + ChatColor.RED + " Hou wel in gedachte"
 						+ " dat het verboden is om iemand vals te reporten!");
 				
 				for(Player p : Bukkit.getOnlinePlayers()) {
 					if(p.hasPermission("ReportSystem.Admin")) {
-						p.sendMessage(reportSystem.PREFIX + sender.getName() + " heeft een report verstuurd over: " + args[1]);
+						p.sendMessage(reportSystem.PREFIX + sender.getName() + " heeft een report verstuurd over: " + args[0]);
 					}
 				}
 				return false;

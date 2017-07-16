@@ -61,6 +61,7 @@ public class ReportGUIListener implements Listener {
 		for(Report r : reportSystem.getReportManager().getReports()) {
 			if(!r.getState().isFinished()) count = count + 1;
 		}
+		if(count != 0)
 		p.sendMessage(reportSystem.PREFIX + "Er staat: " + count + " reports open die nog behandeld moeten worden! Doe /reports all om ze te bekijken!");
 	}
 
