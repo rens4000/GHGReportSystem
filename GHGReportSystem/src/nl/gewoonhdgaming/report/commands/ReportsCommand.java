@@ -168,7 +168,7 @@ public class ReportsCommand implements CommandExecutor {
 				sender.sendMessage(reportSystem.PREFIX + "Reporter: " + r.getReporter());
 				sender.sendMessage(reportSystem.PREFIX + "Slachtoffer: " + r.getVictim());
 				sender.sendMessage(reportSystem.PREFIX + "Reden: " + r.getReason());
-				sender.sendMessage(reportSystem.PREFIX + "State: " + r.getState().getDisplayText());
+				sender.sendMessage(reportSystem.PREFIX + "Status: " + r.getState().getDisplayText());
 				if(r.getTaker() != null)
 					sender.sendMessage(reportSystem.PREFIX + "Behandelaar: " + r.getTaker());
 			}

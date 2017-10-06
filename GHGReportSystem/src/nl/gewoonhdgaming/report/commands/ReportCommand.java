@@ -28,14 +28,14 @@ public class ReportCommand implements CommandExecutor {
 			    if(!(sender instanceof Player)) {
 			    	reportSystem.getReportManager().createReport(builder.toString(), "console", args[0]);
 					sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!");
-					sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!" + ChatColor.RED + " Hou wel in gedachte"
-							+ " dat het verboden is om iemand vals te reporten!");
+					sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!" + ChatColor.RED + " Let op!"
+							+ " het vals rapporteren van spelers is niet toegestaan!");
 			    	return false;
 			    }
 			    
 				reportSystem.getReportManager().createReport(builder.toString(), sender.getName(), args[0]);
-				sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!" + ChatColor.RED + " Hou wel in gedachte"
-						+ " dat het verboden is om iemand vals te reporten!");
+				sender.sendMessage(reportSystem.PREFIX + args[0] + " is gereport!" + ChatColor.RED + " Let op!"
+						+ " het vals rapporteren van spelers is niet toegestaan!");
 				
 				for(Player p : Bukkit.getOnlinePlayers()) {
 					if(p.hasPermission("ReportSystem.Admin")) {
